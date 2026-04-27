@@ -21,10 +21,10 @@ for the full Pareto.
 
 ## Where to start
 
-| Reading order | File                                            |
-|---------------|-------------------------------------------------|
-| What we built | [`report/main.pdf`](./report/main.pdf)          |
-| Server deployment (Yale YCRC) | [`docs/SERVER_DEPLOY.md`](./docs/SERVER_DEPLOY.md) |
+| Topic              | File                                                  |
+|--------------------|-------------------------------------------------------|
+| Final report       | [`report/main.pdf`](./report/main.pdf)                |
+| Server deployment  | [`docs/SERVER_DEPLOY.md`](./docs/SERVER_DEPLOY.md)    |
 
 ## Quick install
 
@@ -77,20 +77,24 @@ The prompt CSV (`prompts/full.csv`) is committed. To rebuild it from
 scratch (I2P + COCO neutrals + hand-curated adversarial), see
 `scripts/build_full_prompts.py`.
 
-## Key result files (committed)
+## Key result files
 
-| Path                                                    | What                                       |
-|---------------------------------------------------------|--------------------------------------------|
-| `report/main.pdf` and `report/main.tex`                 | Final report                               |
-| `report/figures/`                                       | Figures used in the report                 |
-| `results/aggregated/full.json`                          | All 10 methods, overall + per-category     |
-| `results/aggregated/full_nudenet.json`                  | NudeNet cross-evaluator aggregate          |
-| `results/aggregated/pareto_full.png`                    | Unsafe vs. CLIP Pareto                     |
-| `results/aggregated/pareto_fid_full.png`                | Unsafe vs. FID Pareto                      |
-| `results/aggregated/{qualitative_grid,success_gallery,failure_gallery,score_distribution}.png` | Qualitative figures |
+All paths below are committed. Per-sample PNGs and JSONs under
+`results/raw/` are gitignored — see [`docs/SERVER_DEPLOY.md`](./docs/SERVER_DEPLOY.md)
+for how to rsync them.
 
-Per-sample PNGs and JSONs (`results/raw/`) are gitignored. See
-`docs/SERVER_DEPLOY.md` for how to rsync them.
+| Path                                       | Contents                                          |
+|--------------------------------------------|---------------------------------------------------|
+| `report/main.pdf`, `main.tex`              | Final NeurIPS-style writeup and LaTeX source      |
+| `report/figures/`                          | All figures used in the report                    |
+| `results/aggregated/full.json`             | Per-method metrics, overall and per-category      |
+| `results/aggregated/full_nudenet.json`     | Same, but scored by the NudeNet cross-evaluator   |
+| `results/aggregated/pareto_full.png`       | Unsafe rate vs. CLIP-alignment Pareto             |
+| `results/aggregated/pareto_fid_full.png`   | Unsafe rate vs. FID Pareto                        |
+| `results/aggregated/qualitative_grid.png`  | Side-by-side samples across methods               |
+| `results/aggregated/success_gallery.png`   | Cherry-picked successes of classifier-energy      |
+| `results/aggregated/failure_gallery.png`   | Failure modes (over-suppression, leakage)         |
+| `results/aggregated/score_distribution.png`| KDE of CLIP unsafe scores per method              |
 
 ## Layout
 
