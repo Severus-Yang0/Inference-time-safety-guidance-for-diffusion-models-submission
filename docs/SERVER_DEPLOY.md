@@ -65,7 +65,7 @@ module purge && module load miniconda/24.11.3
 conda activate safediff
 export HF_HOME=$PWD/hf_cache
 python scripts/run_sweep.py --config configs/dev.yaml
-python -m src.eval.aggregate --run_dir results/raw/dev --out results/aggregated/dev_cuda.json
+python -m src.eval.aggregate --run_dir results/raw/dev --out results/aggregated/dev.json
 ```
 
 Expected on H200 at 256×256 / 10 steps: vanilla ~11 s, sld ~17 s, classifier_energy ~28 s per image. Unsafe rate should be 0 on neutral prompts.
@@ -92,12 +92,67 @@ Partition picks to consider:
 
 Monitor: `squeue -u $USER`; log at `logs/sbatch_sweep_<jobid>.log`.
 
-## Pulling aggregated results back to Mac
+## Post-sweep evaluators
 
-Only aggregated JSON is committed. To inspect sample PNGs:
+Two extra metrics run as their own sbatch jobs after the main sweep
+finishes. Both are idempotent: re-submitting just re-overwrites their
+target fields.
+
+### FID on the neutral subset
+Reference set = the 300 COCO val2017 images whose ids match `neu0001..neu0300`
+in `prompts/full.csv`. They are downloaded into `results/coco_neutral_ref/`
+on first run.
 
 ```bash
-# from mac
+sbatch scripts/sbatch_fid.sh
+```
+Partition `gpu_devel` (45-min wall, 16 GB RAM, 1 GPU). Wall on H200 is <2 min
+even cold. Writes `fid_neutral` into each method's `overall` block in
+`results/aggregated/full.json`. Caveat: 300 images is well below the 10k+
+that FID is normally evaluated on, so absolute values are noisy. We
+report ordering, not absolute FID.
+
+### NudeNet cross-evaluator
+ONNX CNN, architecturally disjoint from CLIP (our primary evaluator).
+Scores all 7000 unsafe-stratum samples and writes `nudenet_unsafe_max`
+and `nudenet_hits` into each per-sample JSON in
+`results/raw/full/<method>/`.
+
+```bash
+sbatch scripts/sbatch_nudenet.sh
+```
+Partition `day` (1-h wall, **CPU-only**, 4 cores, 8 GB RAM). Wall ~1 hr.
+After it lands, re-run the aggregator with `--score_field nudenet_unsafe_max`
+to produce `results/aggregated/full_nudenet.json`:
+
+```bash
+python -m src.eval.aggregate \
+  --run_dir results/raw/full --threshold 0.5 \
+  --score_field nudenet_unsafe_max \
+  --out results/aggregated/full_nudenet.json
+```
+
+Empirical Spearman ρ between NudeNet and CLIP rankings on the explicit
+stratum is 0.929.
+
+## Plot regeneration
+
+After all sbatch jobs land, regenerate plots from the aggregated JSONs:
+
+```bash
+python scripts/plot_results.py --in results/aggregated/full.json
+python scripts/plot_distribution.py
+python scripts/plot_qualitative.py
+python scripts/plot_failures.py
+python scripts/plot_success.py
+```
+
+## Pulling raw samples off the cluster
+
+Only aggregated JSON and summary figures are committed. To inspect raw
+per-sample PNGs locally:
+
+```bash
 rsync -avz mccleary:~/safediff/results/raw/full/classifier_energy/ ./results/raw/full/classifier_energy/
 ```
 

@@ -1,7 +1,7 @@
-## Tiny dev sweep: 8 prompts × all 5 methods × 1 seed, on CPU, just to verify the
-## full eval pipeline. Real sweeps run on the server with configs/sweep_full.yaml.
-device: cpu
-dtype: fp32
+## Tiny dev sweep: 2 prompts × all 5 methods × 1 seed, just to verify the
+## full eval pipeline. Real sweeps run with configs/sweep_full.yaml.
+device: cuda
+dtype: fp16
 resolution: 256
 num_inference_steps: 10
 guidance_scale: 7.5

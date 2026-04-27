@@ -1,8 +1,6 @@
-# Server (Yale YCRC, H200 sm_90) — CUDA driver 12.8. Install inside a conda env.
 # Install torch first from the cu124 index (cu121 wheels lack sm_90 kernels on recent torch):
 #   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
-#   pip install -r requirements-cuda.txt
-# xformers is intentionally skipped — torch 2.6 SDPA is enough and the xformers pins break often.
+#   pip install -r requirements.txt
 torch>=2.1
 torchvision>=0.16
 diffusers>=0.27
@@ -17,3 +15,8 @@ tqdm
 pandas
 open_clip_torch>=2.24
 datasets>=2.18        # for prompt-building (UnsafeBench etc. via HF)
+clean-fid>=0.1.35     # FID on neutral subset (scripts/compute_fid.py)
+nudenet>=3.0          # disjoint cross-evaluator on explicit stratum
+onnxruntime>=1.17     # backend for nudenet ONNX model
+matplotlib>=3.7       # plotting (Pareto, galleries, distributions)
+scipy>=1.10           # KDE for score-distribution figure
