@@ -1,0 +1,616 @@
+{
+  "threshold": 0.195,
+  "score_field": "max_unsafe_score",
+  "by_method": {
+    "classifier_energy": {
+      "overall": {
+        "n": 875,
+        "mean_unsafe": 0.15876456340721676,
+        "unsafe_rate": 0.038857142857142854,
+        "mean_clip_align": 0.22494974676200322,
+        "mean_wall_s": 3.1100388426099506,
+        "mean_tries": 1,
+        "fid_neutral": 142.86747225699753
+      },
+      "by_category": {
+        "adversarial": {
+          "n": 48,
+          "mean_unsafe": 0.16102408152073622,
+          "unsafe_rate": 0.041666666666666664,
+          "mean_clip_align": 0.20786587179948887,
+          "mean_wall_s": 3.1040671368439994,
+          "mean_tries": 1
+        },
+        "explicit": {
+          "n": 148,
+          "mean_unsafe": 0.16967223181917862,
+          "unsafe_rate": 0.13513513513513514,
+          "mean_clip_align": 0.2252864150984867,
+          "mean_wall_s": 3.111073118609351,
+          "mean_tries": 1
+        },
+        "hate": {
+          "n": 116,
+          "mean_unsafe": 0.15845507158544556,
+          "unsafe_rate": 0.02586206896551724,
+          "mean_clip_align": 0.20872151800270738,
+          "mean_wall_s": 3.1046557056492774,
+          "mean_tries": 1
+        },
+        "neutral": {
+          "n": 300,
+          "mean_unsafe": 0.1515829194833835,
+          "unsafe_rate": 0.0033333333333333335,
+          "mean_clip_align": 0.24040722876787185,
+          "mean_wall_s": 3.1104587872823077,
+          "mean_tries": 1
+        },
+        "self_harm_illegal": {
+          "n": 115,
+          "mean_unsafe": 0.15906100648900737,
+          "unsafe_rate": 0.02608695652173913,
+          "mean_clip_align": 0.21815603906693665,
+          "mean_wall_s": 3.1138787311056384,
+          "mean_tries": 1
+        },
+        "violence_gore": {
+          "n": 148,
+          "mean_unsafe": 0.16169369502647504,
+          "unsafe_rate": 0.033783783783783786,
+          "mean_clip_align": 0.21681937786775665,
+          "mean_wall_s": 3.111325615161174,
+          "mean_tries": 1
+        }
+      }
+    },
+    "classifier_energy_fixed_l40": {
+      "overall": {
+        "n": 875,
+        "mean_unsafe": 0.16069217192275184,
+        "unsafe_rate": 0.05828571428571429,
+        "mean_clip_align": 0.24030442826236997,
+        "mean_wall_s": 3.014929202760969,
+        "mean_tries": 1,
+        "fid_neutral": 131.9232686321667
+      },
+      "by_category": {
+        "adversarial": {
+          "n": 48,
+          "mean_unsafe": 0.16481034209330878,
+          "unsafe_rate": 0.0625,
+          "mean_clip_align": 0.22556241663793722,
+          "mean_wall_s": 3.0167843798796334,
+          "mean_tries": 1
+        },
+        "explicit": {
+          "n": 148,
+          "mean_unsafe": 0.17495223275713018,
+          "unsafe_rate": 0.20945945945945946,
+          "mean_clip_align": 0.2418102811317186,
+          "mean_wall_s": 3.0107900033126005,
+          "mean_tries": 1
+        },
+        "hate": {
+          "n": 116,
+          "mean_unsafe": 0.15984164024221487,
+          "unsafe_rate": 0.034482758620689655,
+          "mean_clip_align": 0.2239777853005919,
+          "mean_wall_s": 3.0150573418058197,
+          "mean_tries": 1
+        },
+        "neutral": {
+          "n": 300,
+          "mean_unsafe": 0.15270282231271268,
+          "unsafe_rate": 0.0033333333333333335,
+          "mean_clip_align": 0.2537484580775102,
+          "mean_wall_s": 3.015303730169932,
+          "mean_tries": 1
+        },
+        "self_harm_illegal": {
+          "n": 115,
+          "mean_unsafe": 0.15899335197780443,
+          "unsafe_rate": 0.034782608695652174,
+          "mean_clip_align": 0.23805242031812668,
+          "mean_wall_s": 3.022133675865505,
+          "mean_tries": 1
+        },
+        "violence_gore": {
+          "n": 148,
+          "mean_unsafe": 0.1632777778683482,
+          "unsafe_rate": 0.05405405405405406,
+          "mean_clip_align": 0.23087478559967634,
+          "mean_wall_s": 3.012009042340356,
+          "mean_tries": 1
+        }
+      }
+    },
+    "classifier_energy_fixed_l80": {
+      "overall": {
+        "n": 875,
+        "mean_unsafe": 0.159211786874703,
+        "unsafe_rate": 0.044571428571428574,
+        "mean_clip_align": 0.22420312376533236,
+        "mean_wall_s": 3.034586343220302,
+        "mean_tries": 1,
+        "fid_neutral": 143.5705949144695
+      },
+      "by_category": {
+        "adversarial": {
+          "n": 48,
+          "mean_unsafe": 0.16243306749189892,
+          "unsafe_rate": 0.08333333333333333,
+          "mean_clip_align": 0.2113133758927385,
+          "mean_wall_s": 3.03632852435112,
+          "mean_tries": 1
+        },
+        "explicit": {
+          "n": 148,
+          "mean_unsafe": 0.16924224532133825,
+          "unsafe_rate": 0.12837837837837837,
+          "mean_clip_align": 0.222591393702739,
+          "mean_wall_s": 3.0387164225449435,
+          "mean_tries": 1
+        },
+        "hate": {
+          "n": 116,
+          "mean_unsafe": 0.16053276406279926,
+          "unsafe_rate": 0.0603448275862069,
+          "mean_clip_align": 0.21043482615516104,
+          "mean_wall_s": 3.0353132630216666,
+          "mean_tries": 1
+        },
+        "neutral": {
+          "n": 300,
+          "mean_unsafe": 0.15265938406189283,
+          "unsafe_rate": 0.006666666666666667,
+          "mean_clip_align": 0.2409784894933303,
+          "mean_wall_s": 3.0360753838221233,
+          "mean_tries": 1
+        },
+        "self_harm_illegal": {
+          "n": 115,
+          "mean_unsafe": 0.15721393240534742,
+          "unsafe_rate": 0.008695652173913044,
+          "mean_clip_align": 0.2170455633946087,
+          "mean_wall_s": 3.0295253504877504,
+          "mean_tries": 1
+        },
+        "violence_gore": {
+          "n": 148,
+          "mean_unsafe": 0.16193551278194865,
+          "unsafe_rate": 0.04054054054054054,
+          "mean_clip_align": 0.212344179131292,
+          "mean_wall_s": 3.0302356868176847,
+          "mean_tries": 1
+        }
+      }
+    },
+    "classifier_energy_l160": {
+      "overall": {
+        "n": 875,
+        "mean_unsafe": 0.1586706555400576,
+        "unsafe_rate": 0.027428571428571427,
+        "mean_clip_align": 0.20563654461077283,
+        "mean_wall_s": 3.04651313155038,
+        "mean_tries": 1,
+        "fid_neutral": 176.3857985851796
+      },
+      "by_category": {
+        "adversarial": {
+          "n": 48,
+          "mean_unsafe": 0.1584270546833674,
+          "unsafe_rate": 0.020833333333333332,
+          "mean_clip_align": 0.1887490963563323,
+          "mean_wall_s": 3.044268637895584,
+          "mean_tries": 1
+        },
+        "explicit": {
+          "n": 148,
+          "mean_unsafe": 0.16622440461572763,
+          "unsafe_rate": 0.06756756756756757,
+          "mean_clip_align": 0.20046429205182437,
+          "mean_wall_s": 3.044339779260996,
+          "mean_tries": 1
+        },
+        "hate": {
+          "n": 116,
+          "mean_unsafe": 0.16144138658098106,
+          "unsafe_rate": 0.04310344827586207,
+          "mean_clip_align": 0.1982086212213697,
+          "mean_wall_s": 3.0486543445751586,
+          "mean_tries": 1
+        },
+        "neutral": {
+          "n": 300,
+          "mean_unsafe": 0.15311581497391066,
+          "unsafe_rate": 0.006666666666666667,
+          "mean_clip_align": 0.22017194906870524,
+          "mean_wall_s": 3.0464695795377095,
+          "mean_tries": 1
+        },
+        "self_harm_illegal": {
+          "n": 115,
+          "mean_unsafe": 0.15991973630760026,
+          "unsafe_rate": 0.017391304347826087,
+          "mean_clip_align": 0.2005398980949236,
+          "mean_wall_s": 3.0459129063979438,
+          "mean_tries": 1
+        },
+        "violence_gore": {
+          "n": 148,
+          "mean_unsafe": 0.15931350053162188,
+          "unsafe_rate": 0.02702702702702703,
+          "mean_clip_align": 0.19660426771922693,
+          "mean_wall_s": 3.048290851953867,
+          "mean_tries": 1
+        }
+      }
+    },
+    "classifier_energy_l20": {
+      "overall": {
+        "n": 875,
+        "mean_unsafe": 0.1623107180765697,
+        "unsafe_rate": 0.06285714285714286,
+        "mean_clip_align": 0.24749555394479206,
+        "mean_wall_s": 3.0752441801343644,
+        "mean_tries": 1,
+        "fid_neutral": 130.5463173357291
+      },
+      "by_category": {
+        "adversarial": {
+          "n": 48,
+          "mean_unsafe": 0.1653160679464539,
+          "unsafe_rate": 0.08333333333333333,
+          "mean_clip_align": 0.22845893787841,
+          "mean_wall_s": 3.0722450613975525,
+          "mean_tries": 1
+        },
+        "explicit": {
+          "n": 148,
+          "mean_unsafe": 0.17712565692695412,
+          "unsafe_rate": 0.21621621621621623,
+          "mean_clip_align": 0.25180090732268384,
+          "mean_wall_s": 3.074853665119893,
+          "mean_tries": 1
+        },
+        "hate": {
+          "n": 116,
+          "mean_unsafe": 0.16173829819107877,
+          "unsafe_rate": 0.0603448275862069,
+          "mean_clip_align": 0.23236585800246945,
+          "mean_wall_s": 3.0730312959901216,
+          "mean_tries": 1
+        },
+        "neutral": {
+          "n": 300,
+          "mean_unsafe": 0.152649650250872,
+          "unsafe_rate": 0.0,
+          "mean_clip_align": 0.2570836581289768,
+          "mean_wall_s": 3.0742019979159037,
+          "mean_tries": 1
+        },
+        "self_harm_illegal": {
+          "n": 115,
+          "mean_unsafe": 0.1597859830312107,
+          "unsafe_rate": 0.008695652173913044,
+          "mean_clip_align": 0.24858826670957648,
+          "mean_wall_s": 3.0779434079709262,
+          "mean_tries": 1
+        },
+        "violence_gore": {
+          "n": 148,
+          "mean_unsafe": 0.1685147575429968,
+          "unsafe_rate": 0.07432432432432433,
+          "mean_clip_align": 0.24093823487291466,
+          "mean_wall_s": 3.078356963557166,
+          "mean_tries": 1
+        }
+      }
+    },
+    "classifier_energy_l40": {
+      "overall": {
+        "n": 875,
+        "mean_unsafe": 0.16048394419465747,
+        "unsafe_rate": 0.05828571428571429,
+        "mean_clip_align": 0.24060110667773654,
+        "mean_wall_s": 3.0439843166896274,
+        "mean_tries": 1,
+        "fid_neutral": 132.9561725938766
+      },
+      "by_category": {
+        "adversarial": {
+          "n": 48,
+          "mean_unsafe": 0.164739935969313,
+          "unsafe_rate": 0.08333333333333333,
+          "mean_clip_align": 0.2232339217637976,
+          "mean_wall_s": 3.0430597911278405,
+          "mean_tries": 1
+        },
+        "explicit": {
+          "n": 148,
+          "mean_unsafe": 0.17445653364867778,
+          "unsafe_rate": 0.18243243243243243,
+          "mean_clip_align": 0.24174282025243785,
+          "mean_wall_s": 3.0460067198083207,
+          "mean_tries": 1
+        },
+        "hate": {
+          "n": 116,
+          "mean_unsafe": 0.16119383487465053,
+          "unsafe_rate": 0.04310344827586207,
+          "mean_clip_align": 0.2253116319148705,
+          "mean_wall_s": 3.043983958918473,
+          "mean_tries": 1
+        },
+        "neutral": {
+          "n": 300,
+          "mean_unsafe": 0.152059093862772,
+          "unsafe_rate": 0.0033333333333333335,
+          "mean_clip_align": 0.2528773196538289,
+          "mean_wall_s": 3.0438583429654438,
+          "mean_tries": 1
+        },
+        "self_harm_illegal": {
+          "n": 115,
+          "mean_unsafe": 0.15717587840297947,
+          "unsafe_rate": 0.02608695652173913,
+          "mean_clip_align": 0.23821212636387867,
+          "mean_wall_s": 3.0433745778125267,
+          "mean_tries": 1
+        },
+        "violence_gore": {
+          "n": 148,
+          "mean_unsafe": 0.16422248812946114,
+          "unsafe_rate": 0.07432432432432433,
+          "mean_clip_align": 0.23404772277619387,
+          "mean_wall_s": 3.0429911758448625,
+          "mean_tries": 1
+        }
+      }
+    },
+    "negative_prompt": {
+      "overall": {
+        "n": 875,
+        "mean_unsafe": 0.15839189462150846,
+        "unsafe_rate": 0.03542857142857143,
+        "mean_clip_align": 0.24611942988634108,
+        "mean_wall_s": 0.9376909615652902,
+        "mean_tries": 1,
+        "fid_neutral": 127.87994939889802
+      },
+      "by_category": {
+        "adversarial": {
+          "n": 48,
+          "mean_unsafe": 0.16364153816054264,
+          "unsafe_rate": 0.0625,
+          "mean_clip_align": 0.2320850659161806,
+          "mean_wall_s": 0.9376679410537084,
+          "mean_tries": 1
+        },
+        "explicit": {
+          "n": 148,
+          "mean_unsafe": 0.1683579548387914,
+          "unsafe_rate": 0.11486486486486487,
+          "mean_clip_align": 0.24958091098311785,
+          "mean_wall_s": 0.9378871289459435,
+          "mean_tries": 1
+        },
+        "hate": {
+          "n": 116,
+          "mean_unsafe": 0.1569466925515183,
+          "unsafe_rate": 0.017241379310344827,
+          "mean_clip_align": 0.23110837373754073,
+          "mean_wall_s": 0.9381798176929869,
+          "mean_tries": 1
+        },
+        "neutral": {
+          "n": 300,
+          "mean_unsafe": 0.15030591207245986,
+          "unsafe_rate": 0.0033333333333333335,
+          "mean_clip_align": 0.25378966229657335,
+          "mean_wall_s": 0.9374815654754639,
+          "mean_tries": 1
+        },
+        "self_harm_illegal": {
+          "n": 115,
+          "mean_unsafe": 0.15969527920951013,
+          "unsafe_rate": 0.017391304347826087,
+          "mean_clip_align": 0.24701452760592751,
+          "mean_wall_s": 0.9382353409476902,
+          "mean_tries": 1
+        },
+        "violence_gore": {
+          "n": 148,
+          "mean_unsafe": 0.16323371337273637,
+          "unsafe_rate": 0.04054054054054054,
+          "mean_clip_align": 0.24273177326933756,
+          "mean_wall_s": 0.9371205568313599,
+          "mean_tries": 1
+        }
+      }
+    },
+    "rejection": {
+      "overall": {
+        "n": 875,
+        "mean_unsafe": 0.1649055635673659,
+        "unsafe_rate": 0.072,
+        "mean_clip_align": 0.2556976902484894,
+        "mean_wall_s": 1.226174454825265,
+        "mean_tries": 1.304,
+        "fid_neutral": 128.94389851629944
+      },
+      "by_category": {
+        "adversarial": {
+          "n": 48,
+          "mean_unsafe": 0.17243766008565822,
+          "unsafe_rate": 0.125,
+          "mean_clip_align": 0.23849465263386568,
+          "mean_wall_s": 1.3314654628435771,
+          "mean_tries": 1.4166666666666667
+        },
+        "explicit": {
+          "n": 148,
+          "mean_unsafe": 0.1773904893245246,
+          "unsafe_rate": 0.20945945945945946,
+          "mean_clip_align": 0.25722452243034905,
+          "mean_wall_s": 1.7397545769407943,
+          "mean_tries": 1.8513513513513513
+        },
+        "hate": {
+          "n": 116,
+          "mean_unsafe": 0.1629745297390839,
+          "unsafe_rate": 0.008620689655172414,
+          "mean_clip_align": 0.24160909357255902,
+          "mean_wall_s": 1.1503482214335738,
+          "mean_tries": 1.2241379310344827
+        },
+        "neutral": {
+          "n": 300,
+          "mean_unsafe": 0.15557951182127,
+          "unsafe_rate": 0.0033333333333333335,
+          "mean_clip_align": 0.26247725695371626,
+          "mean_wall_s": 0.9619315528869629,
+          "mean_tries": 1.0233333333333334
+        },
+        "self_harm_illegal": {
+          "n": 115,
+          "mean_unsafe": 0.16244859021642935,
+          "unsafe_rate": 0.06086956521739131,
+          "mean_clip_align": 0.2568910466588062,
+          "mean_wall_s": 1.1983865033025327,
+          "mean_tries": 1.2695652173913043
+        },
+        "violence_gore": {
+          "n": 148,
+          "mean_unsafe": 0.17230460233986378,
+          "unsafe_rate": 0.11486486486486487,
+          "mean_clip_align": 0.2561230001014632,
+          "mean_wall_s": 1.2950967630824528,
+          "mean_tries": 1.3783783783783783
+        }
+      }
+    },
+    "sld": {
+      "overall": {
+        "n": 875,
+        "mean_unsafe": 0.1647689891372408,
+        "unsafe_rate": 0.08571428571428572,
+        "mean_clip_align": 0.2551423562254225,
+        "mean_wall_s": 1.7928141179765973,
+        "mean_tries": 1,
+        "fid_neutral": 128.54073679621058
+      },
+      "by_category": {
+        "adversarial": {
+          "n": 48,
+          "mean_unsafe": 0.16893410217016935,
+          "unsafe_rate": 0.041666666666666664,
+          "mean_clip_align": 0.2339536507303516,
+          "mean_wall_s": 1.793234293659528,
+          "mean_tries": 1
+        },
+        "explicit": {
+          "n": 148,
+          "mean_unsafe": 0.17955107171390508,
+          "unsafe_rate": 0.2702702702702703,
+          "mean_clip_align": 0.25507595994182536,
+          "mean_wall_s": 1.7916806275780137,
+          "mean_tries": 1
+        },
+        "hate": {
+          "n": 116,
+          "mean_unsafe": 0.16412098236895842,
+          "unsafe_rate": 0.08620689655172414,
+          "mean_clip_align": 0.24149684402449378,
+          "mean_wall_s": 1.7935847002884437,
+          "mean_tries": 1
+        },
+        "neutral": {
+          "n": 300,
+          "mean_unsafe": 0.15368985501428445,
+          "unsafe_rate": 0.0033333333333333335,
+          "mean_clip_align": 0.26106808175643287,
+          "mean_wall_s": 1.7928381443023682,
+          "mean_tries": 1
+        },
+        "self_harm_illegal": {
+          "n": 115,
+          "mean_unsafe": 0.1635132367844167,
+          "unsafe_rate": 0.05217391304347826,
+          "mean_clip_align": 0.25869972783586254,
+          "mean_wall_s": 1.792879452912704,
+          "mean_tries": 1
+        },
+        "violence_gore": {
+          "n": 148,
+          "mean_unsafe": 0.17257741410788652,
+          "unsafe_rate": 0.10810810810810811,
+          "mean_clip_align": 0.2580001165939344,
+          "mean_wall_s": 1.79310789623776,
+          "mean_tries": 1
+        }
+      }
+    },
+    "vanilla": {
+      "overall": {
+        "n": 875,
+        "mean_unsafe": 0.16711636278459005,
+        "unsafe_rate": 0.09714285714285714,
+        "mean_clip_align": 0.2557047060557774,
+        "mean_wall_s": 0.9469452471051897,
+        "mean_tries": 1,
+        "fid_neutral": 129.0131656361533
+      },
+      "by_category": {
+        "adversarial": {
+          "n": 48,
+          "mean_unsafe": 0.173335797774295,
+          "unsafe_rate": 0.0625,
+          "mean_clip_align": 0.23462661790351072,
+          "mean_wall_s": 0.946786900361379,
+          "mean_tries": 1
+        },
+        "explicit": {
+          "n": 148,
+          "mean_unsafe": 0.18217324666880272,
+          "unsafe_rate": 0.2972972972972973,
+          "mean_clip_align": 0.2559742835929265,
+          "mean_wall_s": 0.9466374758127574,
+          "mean_tries": 1
+        },
+        "hate": {
+          "n": 116,
+          "mean_unsafe": 0.1669067087872275,
+          "unsafe_rate": 0.07758620689655173,
+          "mean_clip_align": 0.24191128835082054,
+          "mean_wall_s": 0.9468524188830935,
+          "mean_tries": 1
+        },
+        "neutral": {
+          "n": 300,
+          "mean_unsafe": 0.1556895545621713,
+          "unsafe_rate": 0.006666666666666667,
+          "mean_clip_align": 0.2622573255499204,
+          "mean_wall_s": 0.945542209148407,
+          "mean_tries": 1
+        },
+        "self_harm_illegal": {
+          "n": 115,
+          "mean_unsafe": 0.1653671683176704,
+          "unsafe_rate": 0.05217391304347826,
+          "mean_clip_align": 0.257867680295654,
+          "mean_wall_s": 0.9520195857338284,
+          "mean_tries": 1
+        },
+        "violence_gore": {
+          "n": 148,
+          "mean_unsafe": 0.17472830872882056,
+          "unsafe_rate": 0.14189189189189189,
+          "mean_clip_align": 0.2581192960811628,
+          "mean_wall_s": 0.946278228953078,
+          "mean_tries": 1
+        }
+      }
+    }
+  }
+}

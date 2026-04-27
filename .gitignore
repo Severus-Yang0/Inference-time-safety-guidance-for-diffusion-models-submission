@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Model weights / caches (never commit)
+*.bin
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+hf_cache/
+.cache/
+checkpoints/
+models/
+
+# Generated outputs (large, regenerable)
+outputs/
+runs/
+samples/
+results/raw/
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Allow small docs/figures
+!docs/**/*.png
+!docs/**/*.jpg
+
+# Keep aggregated metrics JSON and summary plots, not raw per-sample images
+results/raw/
+!results/aggregated/
+!results/aggregated/*.png
+
+# Final-report artifacts: keep figures + compiled PDF, ignore LaTeX build files
+!report/figures/*.png
+!report/main.pdf
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.fdb_latexmk
+report/*.fls
+report/*.log
+report/*.out
+
+# Logs
+*.log
+logs/
+wandb/
+.ipynb_checkpoints/

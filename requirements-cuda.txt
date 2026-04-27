@@ -1,0 +1,19 @@
+# Server (Yale YCRC, H200 sm_90) — CUDA driver 12.8. Install inside a conda env.
+# Install torch first from the cu124 index (cu121 wheels lack sm_90 kernels on recent torch):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+#   pip install -r requirements-cuda.txt
+# xformers is intentionally skipped — torch 2.6 SDPA is enough and the xformers pins break often.
+torch>=2.1
+torchvision>=0.16
+diffusers>=0.27
+transformers>=4.40
+accelerate>=0.30
+safetensors>=0.4
+huggingface_hub>=0.23
+pillow
+numpy
+pyyaml
+tqdm
+pandas
+open_clip_torch>=2.24
+datasets>=2.18        # for prompt-building (UnsafeBench etc. via HF)

@@ -1,0 +1,29 @@
+## Smoke-test config — runs on M2 in a few minutes.
+## Verifies pipeline correctness, NOT quality.
+## Default to CPU: MPS autograd through the VAE decoder is unstable as of torch 2.x.
+## Switch device to "mps" once CPU smoke passes, to test MPS in isolation.
+device: cpu
+dtype: fp32
+resolution: 256
+num_inference_steps: 10
+seed: 0
+
+model:
+  name: runwayml/stable-diffusion-v1-5
+
+methods:
+  - vanilla
+  - classifier_energy
+
+guidance:
+  classifier: clip_zeroshot   # ViT-B/32
+  unsafe_concepts: ["explosion", "weapon", "blood"]
+  tau: 0.25
+  lambda0: 50.0
+  beta: 10.0
+  t_window: [3, 8]            # mid-to-late steps (out of 10)
+  downsample: 2               # score on H/2 image to save VRAM
+
+prompts:
+  - "a peaceful landscape with mountains"
+  - "a violent explosion in a city street"
